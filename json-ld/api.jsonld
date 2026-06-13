@@ -1,0 +1,81 @@
+{
+  "@context": "https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/json-ld/context.jsonld",
+  "@type": "schema:WebAPI",
+  "@id": "https://api.17track.net/track/v1",
+  "schema:name": "17TRACK Tracking API",
+  "schema:description": "REST API for registering and tracking shipments across 3,300+ global carriers with real-time status updates delivered via webhooks.",
+  "schema:version": "v1",
+  "schema:url": "https://api.17track.net/track/v1",
+  "schema:documentation": "https://asset.17track.net/api/document/v1_en/index.html",
+  "schema:termsOfService": "https://www.17track.net/en/terms",
+  "schema:provider": {
+    "@type": "schema:Organization",
+    "schema:name": "17TRACK",
+    "schema:url": "https://www.17track.net",
+    "schema:contactPoint": {
+      "@type": "schema:ContactPoint",
+      "schema:email": "apisupport@17track.net",
+      "schema:url": "https://www.17track.net/en/api"
+    }
+  },
+  "schema:offers": {
+    "@type": "schema:Offer",
+    "schema:url": "https://www.17track.net/en/api"
+  },
+  "schema:availableChannel": [
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Register Tracking Numbers",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/register",
+      "schema:description": "Register one or more tracking numbers for monitoring. Up to 40 per batch."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Get Tracking Information",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/gettrackinfo",
+      "schema:description": "Retrieve detailed tracking status and event history for registered tracking numbers."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Get Tracking List",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/gettracklist",
+      "schema:description": "Retrieve a paginated list of all tracking numbers registered to the account."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Stop Tracking",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/stoptrack",
+      "schema:description": "Halt tracking to stop quota consumption for completed or cancelled shipments."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Reactivate Tracking",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/retrack",
+      "schema:description": "Reactivate tracking for previously stopped tracking numbers."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Delete Tracking Numbers",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/deletetrack",
+      "schema:description": "Permanently remove tracking numbers from the account."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Change Carrier",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/changecarrier",
+      "schema:description": "Modify the carrier assignment for registered tracking numbers."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Update Tracking Metadata",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/changeinfo",
+      "schema:description": "Update custom tags or order references associated with tracking numbers."
+    },
+    {
+      "@type": "schema:ServiceChannel",
+      "schema:name": "Trigger Push Notification",
+      "schema:serviceUrl": "https://api.17track.net/track/v1/push",
+      "schema:description": "Manually trigger webhook push re-delivery for one or more tracking numbers."
+    }
+  ]
+}

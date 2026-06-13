@@ -1,0 +1,34 @@
+{
+  "summary": "Register two tracking numbers",
+  "description": "Example request to register two shipments with 17TRACK. The first specifies a carrier explicitly; the second relies on auto-detection.",
+  "request": {
+    "method": "POST",
+    "url": "https://api.17track.net/track/v1/register",
+    "headers": {
+      "17token": "YOUR_API_KEY",
+      "Content-Type": "application/json"
+    },
+    "body": [
+      {
+        "number": "1Z999AA10123456784",
+        "carrier": 100003
+      },
+      {
+        "number": "9400111899223397541123"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "code": 0,
+      "data": {
+        "accepted": [
+          { "number": "1Z999AA10123456784" },
+          { "number": "9400111899223397541123" }
+        ],
+        "rejected": []
+      }
+    }
+  }
+}

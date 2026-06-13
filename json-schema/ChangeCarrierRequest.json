@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.17track.net/track/v1/schemas/ChangeCarrierRequest",
+  "title": "ChangeCarrierRequest",
+  "description": "Request body item for changing the carrier assigned to a tracking number.",
+  "type": "object",
+  "required": ["number", "carrier"],
+  "properties": {
+    "number": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50,
+      "description": "Tracking number",
+      "example": "1Z999AA10123456784"
+    },
+    "carrier": {
+      "type": "integer",
+      "description": "New carrier numeric ID to assign",
+      "example": 100003
+    }
+  },
+  "additionalProperties": false
+}

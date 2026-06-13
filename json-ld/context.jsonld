@@ -1,0 +1,83 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "track17": "https://api.17track.net/track/v1/vocab#",
+
+    "TrackingNumber": "track17:TrackingNumber",
+    "Carrier": "track17:Carrier",
+    "TrackingEvent": "track17:TrackingEvent",
+    "ShipmentStatus": "track17:ShipmentStatus",
+    "BatchRequest": "track17:BatchRequest",
+    "BatchResponse": "track17:BatchResponse",
+    "WebhookPush": "track17:WebhookPush",
+
+    "number": {
+      "@id": "track17:number",
+      "@type": "schema:identifier"
+    },
+    "carrier": {
+      "@id": "track17:carrierId",
+      "@type": "schema:Number"
+    },
+    "tag": {
+      "@id": "track17:tag",
+      "@type": "schema:Text"
+    },
+    "code": {
+      "@id": "track17:statusCode",
+      "@type": "schema:Number"
+    },
+    "message": {
+      "@id": "schema:description"
+    },
+    "accepted": {
+      "@id": "track17:accepted",
+      "@container": "@list"
+    },
+    "rejected": {
+      "@id": "track17:rejected",
+      "@container": "@list"
+    },
+    "track": {
+      "@id": "track17:trackingData"
+    },
+    "z0": {
+      "@id": "track17:latestEvent"
+    },
+    "z1": {
+      "@id": "track17:eventHistory",
+      "@container": "@list"
+    },
+    "z": {
+      "@id": "track17:mainStatusCode",
+      "@type": "schema:Number"
+    },
+    "s": {
+      "@id": "track17:subStatusCode",
+      "@type": "schema:Number"
+    },
+    "a": {
+      "@id": "schema:location"
+    },
+    "c": {
+      "@id": "schema:description"
+    },
+    "d": {
+      "@id": "schema:dateModified",
+      "@type": "schema:DateTime"
+    },
+    "page": {
+      "@id": "schema:pageNumber",
+      "@type": "schema:Number"
+    },
+    "page_size": {
+      "@id": "track17:pageSize",
+      "@type": "schema:Number"
+    },
+    "status": {
+      "@id": "track17:filterStatus",
+      "@type": "schema:Number"
+    }
+  }
+}

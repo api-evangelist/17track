@@ -1,0 +1,124 @@
+title: 17TRACK API Vocabulary
+description: Domain terms and status codes used by the 17TRACK Tracking API.
+version: v1
+url: https://asset.17track.net/api/document/v1_en/index.html
+
+terms:
+
+  - term: tracking_number
+    label: Tracking Number
+    description: A unique alphanumeric identifier (5-50 characters) assigned to a shipment
+      by a carrier. Used as the primary key for all tracking operations.
+    example: "1Z999AA10123456784"
+
+  - term: carrier
+    label: Carrier
+    description: A logistics or postal company responsible for transporting a shipment.
+      Represented in the API by a numeric carrier ID. 17TRACK supports 3,300+ global carriers.
+    example: 100003
+
+  - term: carrier_id
+    label: Carrier ID
+    description: Numeric identifier assigned by 17TRACK to each supported carrier.
+      Used when registering tracking numbers or changing carrier assignment.
+    example: 100003
+
+  - term: auto_detection
+    label: Auto Detection
+    description: 17TRACK's carrier identification feature that automatically determines
+      the correct carrier from a tracking number format. Covers approximately 80%+ of shipments.
+
+  - term: quota
+    label: Tracking Quota
+    description: API usage credit consumed each time a tracking number is registered.
+      Quota consumption stops when tracking is halted via the stoptrack endpoint.
+
+  - term: main_status
+    label: Main Status (z)
+    description: Top-level shipment status code indicating the broad state of a shipment.
+      One of 9 values (0-8).
+    values:
+      - code: 0
+        label: Not Found
+        description: No tracking information found yet.
+      - code: 1
+        label: In Transit
+        description: Shipment is moving through the carrier network.
+      - code: 2
+        label: Expired
+        description: No updates received within the expected time window.
+      - code: 3
+        label: Pickup
+        description: Ready for or awaiting customer pickup.
+      - code: 4
+        label: Undeliverable
+        description: Delivery attempted but failed; action may be required.
+      - code: 5
+        label: Delivered
+        description: Shipment successfully delivered to recipient.
+      - code: 6
+        label: Return
+        description: Shipment is being returned to sender.
+      - code: 7
+        label: Alert
+        description: An exception or alert requires attention.
+      - code: 8
+        label: Pending
+        description: Registered but carrier has not yet received the shipment.
+
+  - term: sub_status
+    label: Sub Status (s)
+    description: Granular shipment status code providing more detail within a main status
+      category. 27 sub-statuses are defined across all main status groups.
+
+  - term: tracking_event
+    label: Tracking Event
+    description: A single checkpoint update from a carrier including status codes,
+      location, description, and timestamp.
+
+  - term: z0
+    label: Latest Event (z0)
+    description: The most recent tracking event object for a shipment, containing
+      the current status, location, description, and timestamp.
+
+  - term: z1
+    label: Event History (z1)
+    description: Chronological array of all tracking events for a shipment from
+      registration through current status.
+
+  - term: webhook
+    label: Webhook
+    description: HTTP callback mechanism by which 17TRACK pushes real-time tracking
+      status updates to a customer-configured endpoint URL when a tracked shipment
+      changes status.
+
+  - term: push_notification
+    label: Push Notification
+    description: The payload delivered to a webhook endpoint containing updated tracking
+      data for one or more shipments.
+
+  - term: tag
+    label: Tag
+    description: Customer-defined label or order reference attached to a tracking
+      number via the changeinfo endpoint. Used to correlate shipments with internal
+      order systems.
+
+  - term: 17token
+    label: API Token (17token)
+    description: Authentication credential sent as an HTTP header with every API request.
+      Obtained from the 17TRACK Management Console under Settings > Security > Access Key.
+      Key changes take effect within 5 minutes.
+
+  - term: batch
+    label: Batch Request
+    description: A single API call that operates on up to 40 tracking numbers simultaneously.
+      All 17TRACK endpoints accept batched arrays to reduce API call overhead.
+
+  - term: accepted
+    label: Accepted
+    description: Array within a batch response listing items that were successfully processed.
+
+  - term: rejected
+    label: Rejected
+    description: Array within a batch response listing items that failed processing,
+      along with error codes and messages explaining the failure.

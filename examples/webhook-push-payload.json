@@ -1,0 +1,40 @@
+{
+  "summary": "Webhook push notification payload",
+  "description": "Example payload delivered by 17TRACK to a registered webhook endpoint when a tracking status changes.",
+  "event": "tracking_update",
+  "payload": {
+    "event": "TRACKING_UPDATED",
+    "data": [
+      {
+        "number": "1Z999AA10123456784",
+        "carrier": 100003,
+        "param": "ORDER-12345",
+        "track": {
+          "z0": {
+            "z": 5,
+            "s": 50,
+            "a": "Austin, TX, US",
+            "c": "Delivered",
+            "d": "2026-06-13T14:22:00"
+          },
+          "z1": [
+            {
+              "z": 4,
+              "s": 41,
+              "a": "Louisville, KY, US",
+              "c": "Out for Delivery",
+              "d": "2026-06-13T09:30:00"
+            },
+            {
+              "z": 5,
+              "s": 50,
+              "a": "Austin, TX, US",
+              "c": "Delivered",
+              "d": "2026-06-13T14:22:00"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

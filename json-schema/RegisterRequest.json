@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.17track.net/track/v1/schemas/RegisterRequest",
+  "title": "RegisterRequest",
+  "description": "Request body item for registering a tracking number with 17TRACK.",
+  "type": "object",
+  "required": ["number"],
+  "properties": {
+    "number": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50,
+      "pattern": "^[a-zA-Z0-9]{5,50}$",
+      "description": "Tracking number (5-50 alphanumeric characters)",
+      "example": "1Z999AA10123456784"
+    },
+    "carrier": {
+      "type": "integer",
+      "description": "Carrier numeric ID. If omitted, auto-detection is used (covers 80%+ of shipments).",
+      "example": 100003
+    }
+  },
+  "additionalProperties": false
+}

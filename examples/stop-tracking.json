@@ -1,0 +1,29 @@
+{
+  "summary": "Stop tracking a delivered shipment",
+  "description": "Example request to halt quota consumption for a delivered shipment.",
+  "request": {
+    "method": "POST",
+    "url": "https://api.17track.net/track/v1/stoptrack",
+    "headers": {
+      "17token": "YOUR_API_KEY",
+      "Content-Type": "application/json"
+    },
+    "body": [
+      {
+        "number": "1Z999AA10123456784"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "code": 0,
+      "data": {
+        "accepted": [
+          { "number": "1Z999AA10123456784" }
+        ],
+        "rejected": []
+      }
+    }
+  }
+}

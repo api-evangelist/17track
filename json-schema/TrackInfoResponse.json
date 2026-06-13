@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.17track.net/track/v1/schemas/TrackInfoResponse",
+  "title": "TrackInfoResponse",
+  "description": "Response containing detailed tracking event history for requested tracking numbers.",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "Response status code (0 for success)",
+      "example": 0
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "accepted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "type": "string",
+                "description": "Tracking number"
+              },
+              "carrier": {
+                "type": "integer",
+                "description": "Carrier ID"
+              },
+              "track": {
+                "type": "object",
+                "properties": {
+                  "z0": {
+                    "type": "object",
+                    "description": "Latest tracking event",
+                    "properties": {
+                      "z": {
+                        "type": "integer",
+                        "description": "Main status code (0-8)"
+                      },
+                      "s": {
+                        "type": "integer",
+                        "description": "Sub-status code"
+                      },
+                      "a": {
+                        "type": "string",
+                        "description": "Event location"
+                      },
+                      "c": {
+                        "type": "string",
+                        "description": "Event description"
+                      },
+                      "d": {
+                        "type": "string",
+                        "description": "Event date and time"
+                      }
+                    }
+                  },
+                  "z1": {
+                    "type": "array",
+                    "description": "Historical tracking events in chronological order",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "z": {
+                          "type": "integer",
+                          "description": "Main status code"
+                        },
+                        "s": {
+                          "type": "integer",
+                          "description": "Sub-status code"
+                        },
+                        "a": {
+                          "type": "string",
+                          "description": "Event location"
+                        },
+                        "c": {
+                          "type": "string",
+                          "description": "Event description"
+                        },
+                        "d": {
+                          "type": "string",
+                          "description": "Event date and time"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "rejected": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number": {
+                "type": "string"
+              },
+              "error": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "integer"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
