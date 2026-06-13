@@ -1,0 +1,99 @@
+name: 17TRACK API Plans
+description: Pricing plans for the 17TRACK Tracking API. Plans are quota-based with
+  annual validity (12-month periods). Each plan provides a fixed number of tracking
+  quota units consumed when tracking numbers are registered or refreshed.
+url: https://www.17track.net/en/api
+plans:
+  - name: Free Trial
+    description: Free trial access for developers to test the 17TRACK Tracking API
+      with a limited number of tracking quota. No credit card required. Includes
+      dedicated technical support.
+    url: https://www.17track.net/en/api
+    price: 0
+    currency: USD
+    unit: trial
+    period: one-time
+    features:
+      - 100 free tracking quota for testing
+      - Access to all API endpoints
+      - Webhook push notifications
+      - Dedicated technical support
+      - No credit card required
+  - name: Basic
+    description: Entry-level plan for small businesses and developers with low to
+      moderate tracking volumes. Annual quota of 10,000 tracking requests.
+    url: https://www.17track.net/en/api
+    price: 299
+    currency: CNY
+    unit: annual
+    period: year
+    features:
+      - 10,000 tracking quota per year
+      - 3,300+ global carrier support
+      - Real-time webhook push notifications
+      - 9 main status categories and 27 sub-statuses
+      - Batch tracking up to 40 numbers per request
+      - Dedicated technical support
+  - name: Advanced
+    description: Mid-tier plan suitable for growing e-commerce businesses with moderate
+      tracking volumes. Annual quota of 50,000 tracking requests.
+    url: https://www.17track.net/en/api
+    price: 1299
+    currency: CNY
+    unit: annual
+    period: year
+    features:
+      - 50,000 tracking quota per year
+      - 3,300+ global carrier support
+      - Real-time webhook push notifications
+      - 9 main status categories and 27 sub-statuses
+      - Batch tracking up to 40 numbers per request
+      - Auto carrier identification for 80%+ of shipments
+      - Dedicated technical support
+  - name: Pro
+    description: High-volume plan for established e-commerce operations and logistics
+      providers. Annual quota of 500,000 tracking requests.
+    url: https://www.17track.net/en/api
+    price: 7299
+    currency: CNY
+    unit: annual
+    period: year
+    features:
+      - 500,000 tracking quota per year
+      - 3,300+ global carrier support
+      - Real-time webhook push notifications
+      - 9 main status categories and 27 sub-statuses
+      - Batch tracking up to 40 numbers per request
+      - Auto carrier identification for 80%+ of shipments
+      - Dedicated technical support
+  - name: Flagship
+    description: Enterprise-level plan for large-scale logistics operations requiring
+      high tracking volumes. Annual quota of 1,000,000 tracking requests.
+    url: https://www.17track.net/en/api
+    price: 9999
+    currency: CNY
+    unit: annual
+    period: year
+    features:
+      - 1,000,000 tracking quota per year
+      - 3,300+ global carrier support
+      - Real-time webhook push notifications
+      - 9 main status categories and 27 sub-statuses
+      - Batch tracking up to 40 numbers per request
+      - Auto carrier identification for 80%+ of shipments
+      - Dedicated technical support
+  - name: Custom
+    description: Enterprise custom plan for organizations with specialized requirements
+      exceeding Flagship tier. Contact sales for custom quota and pricing.
+    url: https://www.17track.net/en/api
+    price: 0
+    currency: CNY
+    unit: custom
+    period: custom
+    features:
+      - Custom tracking quota
+      - 3,300+ global carrier support
+      - Real-time webhook push notifications
+      - Dedicated account management
+      - SLA agreements
+      - Custom integration support

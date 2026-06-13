@@ -1,0 +1,71 @@
+name: 17TRACK API FinOps
+description: Financial operations guidance for managing 17TRACK Tracking API costs.
+  The API uses a quota-based consumption model with annual plans. Tracking quota is
+  consumed when tracking numbers are registered and refreshed over their tracking
+  lifecycle.
+url: https://www.17track.net/en/api
+model: quota-based
+billing-period: annual
+currency: CNY
+cost-drivers:
+  - name: Tracking Quota Consumption
+    description: Primary cost driver. Each tracking number registration consumes
+      quota. Quota is also consumed for each status update cycle until the shipment
+      is fulfilled or tracking is stopped.
+    unit: tracking-request
+    type: consumption
+  - name: Plan Tier
+    description: Annual plan tier determines total available quota and per-unit cost.
+      Higher tiers offer lower per-unit pricing with bulk discount.
+    type: tiered
+unit-economics:
+  - plan: Basic
+    quota: 10000
+    annual-cost-cny: 299
+    cost-per-unit-cny: 0.0299
+  - plan: Advanced
+    quota: 50000
+    annual-cost-cny: 1299
+    cost-per-unit-cny: 0.0259
+  - plan: Pro
+    quota: 500000
+    annual-cost-cny: 7299
+    cost-per-unit-cny: 0.0145
+  - plan: Flagship
+    quota: 1000000
+    annual-cost-cny: 9999
+    cost-per-unit-cny: 0.0099
+optimization-strategies:
+  - name: Use Stop Tracking
+    description: Call the /stoptrack endpoint for shipments that are delivered or
+      no longer need monitoring to avoid unnecessary quota consumption on completed
+      shipments.
+    endpoint: /stoptrack
+    impact: high
+  - name: Batch Requests
+    description: Always batch up to 40 tracking numbers per request to maximize throughput
+      and minimize API call overhead while staying within rate limits.
+    batch-size: 40
+    impact: medium
+  - name: Right-size Plan Selection
+    description: Choose a plan based on average monthly tracking volume multiplied
+      by 12. Overage may require purchasing additional quota or upgrading mid-cycle.
+    impact: high
+  - name: Webhook-driven Architecture
+    description: Use webhooks (push mechanism) to receive updates automatically rather
+      than polling with /gettrackinfo, which would consume additional quota for each
+      poll cycle.
+    impact: high
+  - name: Auto Carrier Detection
+    description: Leverage the built-in auto carrier identification feature (covers
+      80%+ of shipments) to avoid manual carrier lookups and reduce integration overhead.
+    impact: low
+free-tier:
+  available: true
+  quota: 100
+  requires-credit-card: false
+  description: 100 free tracking quota provided for testing and evaluation. No credit
+    card required.
+contact:
+  sales: https://www.17track.net/en/api
+  support: apisupport@17track.net

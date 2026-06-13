@@ -1,0 +1,52 @@
+name: 17TRACK API Rate Limits
+description: Rate limiting rules and constraints for the 17TRACK Tracking API. Limits
+  apply per API key and are enforced to ensure fair usage and platform stability.
+url: https://asset.17track.net/api/document/v1_en/index.html
+rate-limits:
+  - name: Request Frequency Limit
+    description: Maximum number of API requests allowed per second per API key. Exceeding
+      this limit returns HTTP 429 Too Many Requests.
+    limit: 3
+    unit: requests
+    period: second
+    scope: api-key
+    error-code: 429
+    error-message: Rate limit exceeded
+  - name: Batch Size Limit
+    description: Maximum number of tracking numbers that can be submitted in a single
+      API request. Applies to all batch endpoints including register, gettrackinfo,
+      stoptrack, retrack, deletetrack, changecarrier, changeinfo, and push.
+    limit: 40
+    unit: tracking-numbers
+    period: request
+    scope: request
+  - name: Tracking Number Format
+    description: Tracking numbers must be between 5 and 50 alphanumeric characters
+      in a continuous combination (no spaces or special characters).
+    minimum-length: 5
+    maximum-length: 50
+    format: alphanumeric
+    scope: tracking-number
+  - name: API Key Propagation
+    description: Updates to API access keys take effect within 5 minutes. New keys
+      should not be used until propagation is complete.
+    propagation-delay: 5
+    unit: minutes
+    scope: api-key
+http-status-codes:
+  - code: 200
+    meaning: Successful processing. Check response body code field for operation-level
+      details as individual items may be accepted or rejected.
+  - code: 401
+    meaning: Unauthorized. Possible causes include invalid API key, IP not in whitelist,
+      or account disabled.
+  - code: 404
+    meaning: Invalid URL. The requested endpoint does not exist.
+  - code: 429
+    meaning: Rate limit exceeded. Reduce request frequency to 3 requests per second
+      or fewer.
+  - code: 500
+    meaning: Internal server error. Retry after a brief delay.
+  - code: 503
+    meaning: Service unavailable. The API is temporarily down for maintenance or
+      experiencing high load.
