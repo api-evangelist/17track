@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: 17token
+  description: API access key obtained from Management Console > Settings > Security > Access
+    Key. Key updates take effect within 5 minutes.
+  sources:
+  - openapi/openapi.yml

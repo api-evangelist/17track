@@ -44,6 +44,10 @@ apis:
         email: apisupport@17track.net
         url: https://www.17track.net/en/api
 common:
+  - type: DomainSecurity
+    url: security/17track-domain-security.yml
+  - type: Authentication
+    url: authentication/17track-authentication.yml
   - type: Website
     url: https://www.17track.net
   - type: Developer
