@@ -44,6 +44,8 @@ apis:
         email: apisupport@17track.net
         url: https://www.17track.net/en/api
 common:
+  - type: AgenticAccess
+    url: agentic-access/17track-agentic-access.yml
   - type: DomainSecurity
     url: security/17track-domain-security.yml
   - type: Authentication
