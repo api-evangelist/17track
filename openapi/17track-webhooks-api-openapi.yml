@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: 17TRACK Tracking Webhooks API
+  description: REST API for registering and tracking shipments across 3,300+ global carriers. Provides real-time shipment status updates delivered via webhook push notifications. All requests use HTTP POST with UTF-8 encoded JSON.
+  version: v1
+  contact:
+    name: 17TRACK API Support
+    email: apisupport@17track.net
+    url: https://www.17track.net/en/api
+  termsOfService: https://www.17track.net/en/terms
+  license:
+    name: Proprietary
+    url: https://www.17track.net/en/terms
+servers:
+- url: https://api.17track.net/track/v1
+  description: 17TRACK Tracking API v1 Production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Webhooks
+  description: Webhook push notification management for receiving automatic tracking updates.
+paths:
+  /push:
+    post:
+      summary: Manually Trigger Push Notification
+      description: Manually trigger webhook push notifications for one or more tracking numbers to re-deliver the latest and historical tracking data to your webhook endpoint.
+      operationId: pushNotification
+      tags:
+      - Webhooks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              maxItems: 40
+              items:
+                $ref: '#/components/schemas/TrackNumberRequest'
+      responses:
+        '200':
+          description: Push notification triggered successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimitExceeded'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+components:
+  schemas:
+    TrackNumberRequest:
+      type: object
+      required:
+      - number
+      properties:
+        number:
+          type: string
+          minLength: 5
+          maxLength: 50
+          pattern: ^[a-zA-Z0-9]{5,50}$
+          description: Tracking number (5-50 alphanumeric characters)
+          example: 1Z999AA10123456784
+    BatchResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Response status code (0 for success)
+          example: 0
+        data:
+          type: object
+          properties:
+            accepted:
+              type: array
+              description: Successfully processed items
+              items:
+                type: object
+                properties:
+                  number:
+                    type: string
+                    description: Tracking number
+            rejected:
+              type: array
+              description: Items that could not be processed with error details
+              items:
+                type: object
+                properties:
+                  number:
+                    type: string
+                    description: Tracking number
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        description: Error code
+                      message:
+                        type: string
+                        description: Error description
+  responses:
+    Unauthorized:
+      description: Unauthorized. Invalid API key, IP not whitelisted, or account disabled.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 401
+              message:
+                type: string
+                example: Unauthorized
+    RateLimitExceeded:
+      description: Rate limit exceeded. Maximum 3 requests per second allowed.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 429
+              message:
+                type: string
+                example: Too Many Requests
+    InternalServerError:
+      description: Internal server error. Retry after a brief delay.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: Internal Server Error
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: 17token
+      description: API access key obtained from Management Console > Settings > Security > Access Key. Key updates take effect within 5 minutes.
+externalDocs:
+  description: 17TRACK API Documentation
+  url: https://asset.17track.net/api/document/v1_en/index.html
