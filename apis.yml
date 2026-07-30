@@ -1,7 +1,20 @@
 name: 17TRACK
 description: Package tracking REST API supporting 3,300+ global carriers for real-time
   shipment tracking, status updates, and delivery notifications via webhook push mechanism.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/17track.png
 url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -14,35 +27,47 @@ tags:
   - Delivery
   - Webhooks
 apis:
-  - name: 17TRACK Tracking API
-    description: REST API for registering and tracking shipments across 3,300+ global
-      carriers with real-time status updates delivered via webhooks. Supports batch
-      tracking up to 40 numbers per request with 9 main status categories and 27
-      sub-statuses.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.17track.net/en/api
-    baseURL: https://api.17track.net/track/v1
-    tags:
-      - Package Tracking
-      - Shipping
-      - Logistics
-      - Carriers
-      - Webhooks
-    properties:
-      - type: Documentation
-        url: https://asset.17track.net/api/document/v1_en/index.html
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/openapi.yml
-      - type: Plans
-        url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/plans/plans.yml
-      - type: RateLimits
-        url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/rate-limits/rate-limits.yml
-      - type: FinOps
-        url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/finops/finops.yml
-    contact:
-      - FN: 17TRACK API Support
-        email: apisupport@17track.net
-        url: https://www.17track.net/en/api
+- aid: 17track:17track-tracking-api
+  name: 17TRACK Tracking API
+  description: >-
+    Core tracking operations for registering, retrieving, and managing shipment tracking numbers.
+  humanURL: https://www.17track.net/en/api
+  baseURL: https://api.17track.net/track/v1
+  tags:
+  - Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/17track-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://asset.17track.net/api/document/v1_en/index.html
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/finops/finops.yml
+- aid: 17track:17track-webhooks-api
+  name: 17TRACK Webhooks API
+  description: Webhook push notification management for receiving automatic tracking updates.
+  humanURL: https://www.17track.net/en/api
+  baseURL: https://api.17track.net/track/v1
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/17track-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://asset.17track.net/api/document/v1_en/index.html
+  - type: Plans
+    url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/plans/plans.yml
+  - type: RateLimits
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/rate-limits/rate-limits.yml
+  - type: FinOps
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/finops/finops.yml
 common:
   - type: AgenticAccess
     url: agentic-access/17track-agentic-access.yml
