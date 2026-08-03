@@ -1,0 +1,21 @@
+{
+  "provider": "17track",
+  "sources": [
+    "17track-tracking-api-openapi.yml",
+    "17track-webhooks-api-openapi.yml",
+    "openapi.yml"
+  ],
+  "outputs": [
+    "17track-tracking-api-openapi.yml",
+    "17track-webhooks-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "discovered stray spec: openapi.yml"
+  ],
+  "skipped": []
+}
