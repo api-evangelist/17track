@@ -1,0 +1,2116 @@
+{
+  "item": [
+    {
+      "id": "4ac72f18-aca3-42a6-8f9c-a3b492910c47",
+      "name": "Tracking",
+      "description": {
+        "content": "Core tracking operations for registering, retrieving, and managing shipment tracking numbers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d53c5ff2-2904-4ac6-ad23-f9452fcda44e",
+          "name": "Register Tracking Numbers",
+          "request": {
+            "name": "Register Tracking Numbers",
+            "description": {
+              "content": "Register one or more tracking numbers for monitoring. Quota is consumed upon registration. Auto carrier identification covers 80%+ of shipments when carrier is not specified.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\",\n    \"carrier\": \"<integer>\"\n  },\n  {\n    \"number\": \"<string>\",\n    \"carrier\": \"<integer>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d671de54-bbe6-4050-8a57-35008acaca76",
+              "name": "Request processed. Check accepted/rejected arrays in response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 1178,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9758,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "923df1be-f7ac-4a31-9f9c-6e75538223c1",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fccc1efa-3103-499f-bdff-f18158284ec0",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a1eb598-f604-4be3-9ee2-c48660fed441",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa6408b0-8a35-40fb-8270-0d24964fe5b3",
+              "name": "Service temporarily unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 503,\n  \"message\": \"Service Unavailable\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc343bab-b3e7-4249-9f78-a872f8aca8ab",
+          "name": "Get Tracking Information",
+          "request": {
+            "name": "Get Tracking Information",
+            "description": {
+              "content": "Retrieve detailed tracking information for one or more registered tracking numbers including current status and event history.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gettrackinfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\"\n  },\n  {\n    \"number\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb477890-d3e9-4545-8a59-95fed277a803",
+              "name": "Tracking information retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettrackinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\",\n        \"carrier\": 703,\n        \"track\": {\n          \"z0\": {\n            \"z\": 9221,\n            \"s\": 569,\n            \"a\": \"string\",\n            \"c\": \"string\",\n            \"d\": \"string\"\n          },\n          \"z1\": [\n            {\n              \"z\": 290,\n              \"s\": 1906,\n              \"a\": \"string\",\n              \"c\": \"string\",\n              \"d\": \"string\"\n            },\n            {\n              \"z\": 6262,\n              \"s\": 5780,\n              \"a\": \"string\",\n              \"c\": \"string\",\n              \"d\": \"string\"\n            }\n          ]\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"carrier\": 8742,\n        \"track\": {\n          \"z0\": {\n            \"z\": 3213,\n            \"s\": 7173,\n            \"a\": \"string\",\n            \"c\": \"string\",\n            \"d\": \"string\"\n          },\n          \"z1\": [\n            {\n              \"z\": 8179,\n              \"s\": 6237,\n              \"a\": \"string\",\n              \"c\": \"string\",\n              \"d\": \"string\"\n            },\n            {\n              \"z\": 2107,\n              \"s\": 9631,\n              \"a\": \"string\",\n              \"c\": \"string\",\n              \"d\": \"string\"\n            }\n          ]\n        }\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 7051,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 2970,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "294b18c3-4155-4e8f-87c7-02fad43364eb",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettrackinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fee5b23b-89d4-46bf-a5f9-2d71cd3ee2b9",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettrackinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cbe83339-254d-4e92-86ea-3cd44ecfb017",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettrackinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1c0afd0-06c6-4a17-a5fc-7b059f2ff561",
+          "name": "Get Tracking List",
+          "request": {
+            "name": "Get Tracking List",
+            "description": {
+              "content": "Retrieve a filtered list of tracking numbers registered to your account with optional filters by status, date range, and pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "gettracklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<integer>\",\n  \"page\": 1,\n  \"page_size\": 40\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3d5f84bc-caf8-4b73-af11-41a84f86120e",
+              "name": "Tracking list retrieved successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettracklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<integer>\",\n  \"page\": 1,\n  \"page_size\": 40\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6807,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9743,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55bfcfa8-ab68-4061-b984-72a9e0dc4220",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettracklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<integer>\",\n  \"page\": 1,\n  \"page_size\": 40\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ba23c2f-6c10-4f4a-8a7c-84464f86789e",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettracklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<integer>\",\n  \"page\": 1,\n  \"page_size\": 40\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04dc2531-43f7-4757-a5bd-7e8310f517e0",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "gettracklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<integer>\",\n  \"page\": 1,\n  \"page_size\": 40\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5842560-2e67-4563-bfa8-94fa48fc2901",
+          "name": "Stop Tracking",
+          "request": {
+            "name": "Stop Tracking",
+            "description": {
+              "content": "Halt tracking operations for one or more tracking numbers to stop quota consumption for completed or cancelled shipments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stoptrack"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\"\n  },\n  {\n    \"number\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4749b2d-bbc4-42f2-8f22-211dd4a971a4",
+              "name": "Tracking stopped successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stoptrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6807,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9743,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9c980ea-6a65-4ceb-90dc-96be2ef7338a",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stoptrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87cb8306-d6ec-4c0c-b086-378651f0306f",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stoptrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a80a4983-30c1-4081-ae3a-8e72df6e2f56",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stoptrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "730a881b-5c0d-4610-9a08-bc4a6af0ddbb",
+          "name": "Reactivate Tracking",
+          "request": {
+            "name": "Reactivate Tracking",
+            "description": {
+              "content": "Reactivate tracking for previously stopped tracking numbers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "retrack"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\"\n  },\n  {\n    \"number\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99eacd3d-2ea2-49f4-ac43-c23251d9db0e",
+              "name": "Tracking reactivated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6807,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9743,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f7fb542-2f37-43eb-8f6b-951e51b37c8f",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "64b6b6be-099d-4b8f-a6ea-f8eaef2bb2ac",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "285d48fb-e0eb-4f02-921a-f4568e57341f",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eaafe772-a5ca-45f7-a70a-a62acb49299c",
+          "name": "Delete Tracking Numbers",
+          "request": {
+            "name": "Delete Tracking Numbers",
+            "description": {
+              "content": "Remove one or more tracking numbers from your account permanently.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "deletetrack"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\"\n  },\n  {\n    \"number\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6c1f4c72-65ba-4965-b0ce-72ed457e80e8",
+              "name": "Tracking numbers deleted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deletetrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6807,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9743,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e14592b6-7805-4bdd-b24b-a08357534f44",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deletetrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa4fedda-b91e-405b-ba14-47560dc47cf7",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deletetrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3060fcb4-894c-4c29-b57b-9d50f24ad227",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deletetrack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79f01894-331b-40a4-8932-0347395c5b60",
+          "name": "Change Carrier",
+          "request": {
+            "name": "Change Carrier",
+            "description": {
+              "content": "Modify the carrier assignment for one or more registered tracking numbers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "changecarrier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\",\n    \"carrier\": \"<integer>\"\n  },\n  {\n    \"number\": \"<string>\",\n    \"carrier\": \"<integer>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb9bc02a-354d-4271-afef-6c5c2c348958",
+              "name": "Carrier updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changecarrier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6807,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9743,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d4e0cde-f1a1-467e-8c4d-aaa325234edb",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changecarrier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce6b2558-50c2-4f1f-b531-d2a5776632f9",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changecarrier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eab192ec-125f-4d7d-9240-7a6751ff889c",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changecarrier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"carrier\": 100003\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e40bbc31-d712-4ccb-b56c-5b4d11d47c2b",
+          "name": "Update Tracking Metadata",
+          "request": {
+            "name": "Update Tracking Metadata",
+            "description": {
+              "content": "Update metadata associated with one or more registered tracking numbers such as order reference or customer information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "changeinfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\",\n    \"tag\": \"<string>\"\n  },\n  {\n    \"number\": \"<string>\",\n    \"tag\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14df827b-687f-4acc-a57d-a875a4d5cbbe",
+              "name": "Tracking metadata updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changeinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6807,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9743,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bdbd62e-a917-4acc-bfe4-785ab080d6f1",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changeinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71769aca-cb8b-4f8a-b2ca-74f29046c756",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changeinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adaa0c52-2942-4955-98cc-627c37449288",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "changeinfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\",\n    \"tag\": \"ORDER-12345\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.17track.net/track/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "17token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6ca28b42-d7a9-485a-ab91-819613917ad1",
+    "name": "17TRACK Tracking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for registering and tracking shipments across 3,300+ global carriers. Provides real-time shipment status updates delivered via webhook push notifications. All requests use HTTP POST with UTF-8 encoded JSON.\n\nContact Support:\n Name: 17TRACK API Support\n Email: apisupport@17track.net",
+      "type": "text/plain"
+    }
+  }
+}

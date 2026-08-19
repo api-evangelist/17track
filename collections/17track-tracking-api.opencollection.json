@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "17TRACK Tracking API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "17token",
+      "value": "{{17token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tracking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register Tracking Numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/register",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register one or more tracking numbers for monitoring. Quota is consumed upon registration. Auto carrier identification covers 80%+ of shipments when carrier is not specified."
+        },
+        {
+          "info": {
+            "name": "Get Tracking Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/gettrackinfo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve detailed tracking information for one or more registered tracking numbers including current status and event history."
+        },
+        {
+          "info": {
+            "name": "Get Tracking List",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/gettracklist",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve a filtered list of tracking numbers registered to your account with optional filters by status, date range, and pagination."
+        },
+        {
+          "info": {
+            "name": "Stop Tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/stoptrack",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Halt tracking operations for one or more tracking numbers to stop quota consumption for completed or cancelled shipments."
+        },
+        {
+          "info": {
+            "name": "Reactivate Tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/retrack",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reactivate tracking for previously stopped tracking numbers."
+        },
+        {
+          "info": {
+            "name": "Delete Tracking Numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/deletetrack",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove one or more tracking numbers from your account permanently."
+        },
+        {
+          "info": {
+            "name": "Change Carrier",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/changecarrier",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify the carrier assignment for one or more registered tracking numbers."
+        },
+        {
+          "info": {
+            "name": "Update Tracking Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.17track.net/track/v1/changeinfo",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update metadata associated with one or more registered tracking numbers such as order reference or customer information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

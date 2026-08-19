@@ -1,0 +1,301 @@
+{
+  "item": [
+    {
+      "id": "bd752537-7d54-4001-9915-eadb8b74d9ed",
+      "name": "Webhooks",
+      "description": {
+        "content": "Webhook push notification management for receiving automatic tracking updates.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bba814d8-aeab-483e-a17c-d7939b4bac8e",
+          "name": "Manually Trigger Push Notification",
+          "request": {
+            "name": "Manually Trigger Push Notification",
+            "description": {
+              "content": "Manually trigger webhook push notifications for one or more tracking numbers to re-deliver the latest and historical tracking data to your webhook endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "push"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"number\": \"<string>\"\n  },\n  {\n    \"number\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "606225bf-b158-4b81-ba4b-a2c3e200e67e",
+              "name": "Push notification triggered successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 0,\n  \"data\": {\n    \"accepted\": [\n      {\n        \"number\": \"string\"\n      },\n      {\n        \"number\": \"string\"\n      }\n    ],\n    \"rejected\": [\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 6600,\n          \"message\": \"string\"\n        }\n      },\n      {\n        \"number\": \"string\",\n        \"error\": {\n          \"code\": 9806,\n          \"message\": \"string\"\n        }\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9604dea-23d9-42e7-99ae-9a0741f89fc8",
+              "name": "Unauthorized. Invalid API key, IP not whitelisted, or account disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 401,\n  \"message\": \"Unauthorized\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40ef2179-6b52-48e1-9cfd-590c5278f96a",
+              "name": "Rate limit exceeded. Maximum 3 requests per second allowed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 429,\n  \"message\": \"Too Many Requests\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6065d2da-2b61-4634-82c7-83407cbcc6cf",
+              "name": "Internal server error. Retry after a brief delay.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "push"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "17token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"number\": \"1Z999AA10123456784\"\n  },\n  {\n    \"number\": \"1Z999AA10123456784\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 500,\n  \"message\": \"Internal Server Error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.17track.net/track/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "17token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "69c3e3a2-c35b-41ae-8d39-b3a1b86f3b0f",
+    "name": "17TRACK Tracking Webhooks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for registering and tracking shipments across 3,300+ global carriers. Provides real-time shipment status updates delivered via webhook push notifications. All requests use HTTP POST with UTF-8 encoded JSON.\n\nContact Support:\n Name: 17TRACK API Support\n Email: apisupport@17track.net",
+      "type": "text/plain"
+    }
+  }
+}
