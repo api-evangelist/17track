@@ -25,6 +25,13 @@ tags:
   - Logistics
   - Carriers
   - Delivery
+  - Webhook
+tags_raw:
+  - Shipping
+  - Package Tracking
+  - Logistics
+  - Carriers
+  - Delivery
   - Webhooks
 apis:
 - aid: 17track:17track-tracking-api
@@ -54,6 +61,8 @@ apis:
   humanURL: https://www.17track.net/en/api
   baseURL: https://api.17track.net/track/v1
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
