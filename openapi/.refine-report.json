@@ -2,20 +2,17 @@
   "provider": "17track",
   "sources": [
     "17track-tracking-api-openapi.yml",
-    "17track-webhooks-api-openapi.yml",
-    "openapi.yml"
+    "17track-webhooks-api-openapi.yml"
   ],
   "outputs": [
     "17track-tracking-api-openapi.yml",
     "17track-webhooks-api-openapi.yml"
   ],
-  "archived": [
-    "archived openapi.yml"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "discovered stray spec: openapi.yml"
+    "apis.yml register: already-registered"
   ],
   "skipped": []
 }

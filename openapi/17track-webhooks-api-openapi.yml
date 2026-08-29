@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: 17TRACK Tracking Webhooks API
   description: REST API for registering and tracking shipments across 3,300+ global carriers. Provides real-time shipment status updates delivered via webhook push notifications. All requests use HTTP POST with UTF-8 encoded JSON.
@@ -101,19 +101,6 @@ components:
                         type: string
                         description: Error description
   responses:
-    Unauthorized:
-      description: Unauthorized. Invalid API key, IP not whitelisted, or account disabled.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                example: 401
-              message:
-                type: string
-                example: Unauthorized
     RateLimitExceeded:
       description: Rate limit exceeded. Maximum 3 requests per second allowed.
       content:
@@ -127,6 +114,19 @@ components:
               message:
                 type: string
                 example: Too Many Requests
+    Unauthorized:
+      description: Unauthorized. Invalid API key, IP not whitelisted, or account disabled.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 401
+              message:
+                type: string
+                example: Unauthorized
     InternalServerError:
       description: Internal server error. Retry after a brief delay.
       content:
