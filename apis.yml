@@ -90,6 +90,9 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/finops/finops.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/17track-capability-edges.yml
+    name: 17TRACK Business Capability Map
   - type: AgenticAccess
     url: agentic-access/17track-agentic-access.yml
   - type: DomainSecurity
