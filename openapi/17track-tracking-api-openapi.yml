@@ -258,7 +258,23 @@ paths:
           $ref: '#/components/responses/InternalServerError'
 components:
   schemas:
-    ChangeInfoRequest:
+    ChangeCarrierRequest:
+      type: object
+      required:
+      - number
+      - carrier
+      properties:
+        number:
+          type: string
+          minLength: 5
+          maxLength: 50
+          description: Tracking number
+          example: 1Z999AA10123456784
+        carrier:
+          type: integer
+          description: New carrier numeric ID to assign
+          example: 100003
+    TrackNumberRequest:
       type: object
       required:
       - number
@@ -267,12 +283,9 @@ components:
           type: string
           minLength: 5
           maxLength: 50
-          description: Tracking number
+          pattern: ^[a-zA-Z0-9]{5,50}$
+          description: Tracking number (5-50 alphanumeric characters)
           example: 1Z999AA10123456784
-        tag:
-          type: string
-          description: Custom tag or order reference for the tracking number
-          example: ORDER-12345
     RegisterRequest:
       type: object
       required:
@@ -289,18 +302,6 @@ components:
           type: integer
           description: Carrier numeric ID. If omitted, auto-detection is used (covers 80%+ of shipments).
           example: 100003
-    TrackNumberRequest:
-      type: object
-      required:
-      - number
-      properties:
-        number:
-          type: string
-          minLength: 5
-          maxLength: 50
-          pattern: ^[a-zA-Z0-9]{5,50}$
-          description: Tracking number (5-50 alphanumeric characters)
-          example: 1Z999AA10123456784
     TrackListRequest:
       type: object
       properties:
@@ -353,11 +354,10 @@ components:
                       message:
                         type: string
                         description: Error description
-    ChangeCarrierRequest:
+    ChangeInfoRequest:
       type: object
       required:
       - number
-      - carrier
       properties:
         number:
           type: string
@@ -365,10 +365,10 @@ components:
           maxLength: 50
           description: Tracking number
           example: 1Z999AA10123456784
-        carrier:
-          type: integer
-          description: New carrier numeric ID to assign
-          example: 100003
+        tag:
+          type: string
+          description: Custom tag or order reference for the tracking number
+          example: ORDER-12345
     TrackInfoResponse:
       type: object
       properties:
@@ -448,45 +448,6 @@ components:
                       message:
                         type: string
   responses:
-    ServiceUnavailable:
-      description: Service temporarily unavailable.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                example: 503
-              message:
-                type: string
-                example: Service Unavailable
-    InternalServerError:
-      description: Internal server error. Retry after a brief delay.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                example: 500
-              message:
-                type: string
-                example: Internal Server Error
-    RateLimitExceeded:
-      description: Rate limit exceeded. Maximum 3 requests per second allowed.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                example: 429
-              message:
-                type: string
-                example: Too Many Requests
     Unauthorized:
       description: Unauthorized. Invalid API key, IP not whitelisted, or account disabled.
       content:
@@ -500,6 +461,45 @@ components:
               message:
                 type: string
                 example: Unauthorized
+    ServiceUnavailable:
+      description: Service temporarily unavailable.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 503
+              message:
+                type: string
+                example: Service Unavailable
+    RateLimitExceeded:
+      description: Rate limit exceeded. Maximum 3 requests per second allowed.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 429
+              message:
+                type: string
+                example: Too Many Requests
+    InternalServerError:
+      description: Internal server error. Retry after a brief delay.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: Internal Server Error
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
