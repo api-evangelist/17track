@@ -258,32 +258,6 @@ paths:
           $ref: '#/components/responses/InternalServerError'
 components:
   responses:
-    ServiceUnavailable:
-      description: Service temporarily unavailable.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                example: 503
-              message:
-                type: string
-                example: Service Unavailable
-    InternalServerError:
-      description: Internal server error. Retry after a brief delay.
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                example: 500
-              message:
-                type: string
-                example: Internal Server Error
     RateLimitExceeded:
       description: Rate limit exceeded. Maximum 3 requests per second allowed.
       content:
@@ -297,6 +271,19 @@ components:
               message:
                 type: string
                 example: Too Many Requests
+    ServiceUnavailable:
+      description: Service temporarily unavailable.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 503
+              message:
+                type: string
+                example: Service Unavailable
     Unauthorized:
       description: Unauthorized. Invalid API key, IP not whitelisted, or account disabled.
       content:
@@ -310,7 +297,51 @@ components:
               message:
                 type: string
                 example: Unauthorized
+    InternalServerError:
+      description: Internal server error. Retry after a brief delay.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                example: 500
+              message:
+                type: string
+                example: Internal Server Error
   schemas:
+    ChangeCarrierRequest:
+      type: object
+      required:
+      - number
+      - carrier
+      properties:
+        number:
+          type: string
+          minLength: 5
+          maxLength: 50
+          description: Tracking number
+          example: 1Z999AA10123456784
+        carrier:
+          type: integer
+          description: New carrier numeric ID to assign
+          example: 100003
+    ChangeInfoRequest:
+      type: object
+      required:
+      - number
+      properties:
+        number:
+          type: string
+          minLength: 5
+          maxLength: 50
+          description: Tracking number
+          example: 1Z999AA10123456784
+        tag:
+          type: string
+          description: Custom tag or order reference for the tracking number
+          example: ORDER-12345
     TrackNumberRequest:
       type: object
       required:
@@ -323,6 +354,74 @@ components:
           pattern: ^[a-zA-Z0-9]{5,50}$
           description: Tracking number (5-50 alphanumeric characters)
           example: 1Z999AA10123456784
+    BatchResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: Response status code (0 for success)
+          example: 0
+        data:
+          type: object
+          properties:
+            accepted:
+              type: array
+              description: Successfully processed items
+              items:
+                type: object
+                properties:
+                  number:
+                    type: string
+                    description: Tracking number
+            rejected:
+              type: array
+              description: Items that could not be processed with error details
+              items:
+                type: object
+                properties:
+                  number:
+                    type: string
+                    description: Tracking number
+                  error:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        description: Error code
+                      message:
+                        type: string
+                        description: Error description
+    TrackListRequest:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: Filter by tracking status code
+        page:
+          type: integer
+          description: Page number for pagination
+          default: 1
+        page_size:
+          type: integer
+          description: Number of results per page
+          default: 40
+          maximum: 40
+    RegisterRequest:
+      type: object
+      required:
+      - number
+      properties:
+        number:
+          type: string
+          minLength: 5
+          maxLength: 50
+          pattern: ^[a-zA-Z0-9]{5,50}$
+          description: Tracking number (5-50 alphanumeric characters)
+          example: 1Z999AA10123456784
+        carrier:
+          type: integer
+          description: Carrier numeric ID. If omitted, auto-detection is used (covers 80%+ of shipments).
+          example: 100003
     TrackInfoResponse:
       type: object
       properties:
@@ -401,105 +500,6 @@ components:
                         type: integer
                       message:
                         type: string
-    BatchResponse:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: Response status code (0 for success)
-          example: 0
-        data:
-          type: object
-          properties:
-            accepted:
-              type: array
-              description: Successfully processed items
-              items:
-                type: object
-                properties:
-                  number:
-                    type: string
-                    description: Tracking number
-            rejected:
-              type: array
-              description: Items that could not be processed with error details
-              items:
-                type: object
-                properties:
-                  number:
-                    type: string
-                    description: Tracking number
-                  error:
-                    type: object
-                    properties:
-                      code:
-                        type: integer
-                        description: Error code
-                      message:
-                        type: string
-                        description: Error description
-    ChangeCarrierRequest:
-      type: object
-      required:
-      - number
-      - carrier
-      properties:
-        number:
-          type: string
-          minLength: 5
-          maxLength: 50
-          description: Tracking number
-          example: 1Z999AA10123456784
-        carrier:
-          type: integer
-          description: New carrier numeric ID to assign
-          example: 100003
-    RegisterRequest:
-      type: object
-      required:
-      - number
-      properties:
-        number:
-          type: string
-          minLength: 5
-          maxLength: 50
-          pattern: ^[a-zA-Z0-9]{5,50}$
-          description: Tracking number (5-50 alphanumeric characters)
-          example: 1Z999AA10123456784
-        carrier:
-          type: integer
-          description: Carrier numeric ID. If omitted, auto-detection is used (covers 80%+ of shipments).
-          example: 100003
-    TrackListRequest:
-      type: object
-      properties:
-        status:
-          type: integer
-          description: Filter by tracking status code
-        page:
-          type: integer
-          description: Page number for pagination
-          default: 1
-        page_size:
-          type: integer
-          description: Number of results per page
-          default: 40
-          maximum: 40
-    ChangeInfoRequest:
-      type: object
-      required:
-      - number
-      properties:
-        number:
-          type: string
-          minLength: 5
-          maxLength: 50
-          description: Tracking number
-          example: 1Z999AA10123456784
-        tag:
-          type: string
-          description: Custom tag or order reference for the tracking number
-          example: ORDER-12345
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
