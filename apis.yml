@@ -30,7 +30,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/17track.png
 url: https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 tags:
   - Shipping
@@ -91,6 +91,8 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/finops/finops.yml
 common:
+  - url: https://www.17track.net/en/blog
+    type: Blog
   - type: CapabilityMap
     url: capabilities/17track-capability-edges.yml
     name: 17TRACK Business Capability Map
