@@ -91,6 +91,12 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/17track/refs/heads/main/finops/finops.yml
 common:
+  - type: Plans
+    url: plans/plans.yml
+  - type: RateLimits
+    url: rate-limits/rate-limits.yml
+  - type: FinOps
+    url: finops/finops.yml
   - url: https://www.17track.net/en/blog
     type: Blog
   - type: CapabilityMap
