@@ -12,7 +12,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-correios-brazil
   label: Correios Brazil
@@ -23,7 +23,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-la-poste-colissimo
   label: La Poste (Colissimo)
@@ -34,7 +34,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-dhl-ecommerce-us
   label: DHL eCommerce US
@@ -45,7 +45,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-usps
   label: USPS
@@ -56,7 +56,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-ups
   label: UPS
@@ -67,7 +67,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-fedex
   label: FedEx
@@ -78,7 +78,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-pitney-bowes
   label: Pitney Bowes
@@ -89,7 +89,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-delhivery
   label: Delhivery
@@ -100,7 +100,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-xpressbees
   label: Xpressbees
@@ -111,7 +111,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-sendle
   label: Sendle
@@ -122,7 +122,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-ninjavan-sg
   label: Ninjavan (SG)
@@ -133,7 +133,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-uniuni
   label: UniUni
@@ -144,7 +144,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-janio
   label: Janio
@@ -155,7 +155,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-kuehne-nagel
   label: Kuehne Nagel
@@ -166,7 +166,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-dsv
   label: DSV
@@ -177,7 +177,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-db-schenker
   label: DB Schenker
@@ -188,7 +188,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-saia
   label: SAIA
@@ -199,7 +199,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-xpo
   label: XPO
@@ -210,7 +210,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-expeditors
   label: Expeditors
@@ -221,7 +221,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-jitsu-axlehire
   label: Jitsu (AxleHire)
@@ -232,7 +232,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-evri
   label: EVRi
@@ -243,7 +243,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-arcbest-panther
   label: ArcBest (Panther)
@@ -254,7 +254,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-shippit
   label: Shippit
@@ -265,7 +265,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-paack
   label: Paack
@@ -276,7 +276,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-loggi-express-br
   label: Loggi Express BR
@@ -287,7 +287,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-99minutos
   label: 99Minutos
@@ -298,7 +298,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-ryder
   label: Ryder
@@ -309,7 +309,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-kurir-rekomendasi-tokopedia
   label: Kurir Rekomendasi (Tokopedia)
@@ -320,7 +320,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-boxc
   label: BoxC
@@ -331,7 +331,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-echo-global-logistics
   label: Echo Global Logistics
@@ -342,7 +342,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-one-ocean-network-express
   label: ONE (Ocean Network Express)
@@ -353,7 +353,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-cma-cgm
   label: CMA CGM
@@ -364,7 +364,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-maersk
   label: Maersk
@@ -375,7 +375,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-old-dominion-freight-line
   label: Old Dominion Freight Line
@@ -386,7 +386,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-rxo
   label: RXO
@@ -397,7 +397,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-forward
   label: Forward
@@ -408,7 +408,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-gigacloud-technology-inc
   label: GigaCloud Technology Inc
@@ -419,7 +419,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-doordash
   label: DoorDash
@@ -430,7 +430,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-c-h-robinson
   label: C.H. Robinson
@@ -441,7 +441,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-msc
   label: MSC
@@ -452,7 +452,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-lazada-choice
   label: Lazada Choice
@@ -463,7 +463,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-ozon
   label: Ozon
@@ -474,7 +474,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-walmart
   label: Walmart
@@ -485,7 +485,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-shipbob
   label: ShipBob
@@ -496,7 +496,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-dp-world
   label: DP WORLD
@@ -507,7 +507,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-postex
   label: PostEx
@@ -518,7 +518,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-jb-hunt
   label: JB hunt
@@ -529,7 +529,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-portal-postnord
   label: Portal PostNord
@@ -540,7 +540,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-hapag-lloyd
   label: Hapag-Lloyd
@@ -551,7 +551,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-coscoshipping
   label: CoscoShipping
@@ -562,7 +562,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-track-pod
   label: Track-POD
@@ -573,7 +573,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-deppon
   label: Deppon
@@ -584,7 +584,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-imile
   label: iMile
@@ -595,7 +595,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-zto-express
   label: ZTO Express
@@ -606,7 +606,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-jd-logistics
   label: JD Logistics
@@ -617,7 +617,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-alibaba-com-logistics
   label: Alibaba.com Logistics
@@ -628,7 +628,7 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: 17track-crane-worldwide-e-commerce
   label: Crane Worldwide (E-commerce)
@@ -639,5 +639,5 @@
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   source: edge
   relationship: carrier-coverage
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
