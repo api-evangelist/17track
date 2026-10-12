@@ -696,3 +696,15 @@
   relationship: carrier-coverage
   status: not-a-workflow
   arazzo: null
+- slug: 17track-aws-marketplace
+  label: AWS Marketplace
+  partner: amazon-web-services
+  partner_name: AWS Marketplace
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-o477osrgsus5g
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
