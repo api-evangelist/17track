@@ -8,7 +8,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:auspost.com.au
 - partner_name: Correios Brazil
   partner: correios
@@ -19,7 +19,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:correios.com.br
 - partner_name: La Poste (Colissimo)
   partner: la-poste
@@ -30,7 +30,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:laposte.fr
 - partner_name: DHL eCommerce US
   partner: dhl
@@ -41,7 +41,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:dhl.com
 - partner_name: USPS
   partner: usps
@@ -52,7 +52,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:usps.com
 - partner_name: UPS
   partner: ups
@@ -63,7 +63,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:ups.com
 - partner_name: FedEx
   partner: fedex
@@ -74,8 +74,19 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:fedex.com
+- partner_name: Aramex
+  partner: aramex
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:aramex.com
 - partner_name: Pitney Bowes
   partner: pitney-bowes
   partner_match: domain
@@ -85,8 +96,30 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:pitneybowes.com
+- partner_name: Purolator
+  partner: purolator
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:purolator.com
+- partner_name: OnTrac
+  partner: ontrac
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:ontrac.com
 - partner_name: Delhivery
   partner: delhivery
   partner_match: domain
@@ -96,7 +129,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:delhivery.com
 - partner_name: Xpressbees
   partner: xpressbees
@@ -107,7 +140,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:xpressbees.com
 - partner_name: Sendle
   partner: sendle
@@ -118,7 +151,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:sendle.com
 - partner_name: Ninjavan (SG)
   partner: ninjavan
@@ -129,7 +162,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:ninjavan.co
 - partner_name: UniUni
   partner: uniuni
@@ -140,7 +173,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:uniuni.com
 - partner_name: Janio
   partner: janio
@@ -151,7 +184,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:janio.asia
 - partner_name: Kuehne Nagel
   partner: kuehne-nagel
@@ -162,7 +195,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:kuehne-nagel.com
 - partner_name: DSV
   partner: dsv
@@ -173,7 +206,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:dsv.com
 - partner_name: DB Schenker
   partner: db-schenker
@@ -184,7 +217,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:dbschenker.com
 - partner_name: SAIA
   partner: saia
@@ -195,7 +228,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:saia.com
 - partner_name: XPO
   partner: xpo-logistics
@@ -206,7 +239,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:xpo.com
 - partner_name: Expeditors
   partner: expeditors-international-of-washington
@@ -217,7 +250,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:expeditors.com
 - partner_name: Jitsu (AxleHire)
   partner: axlehire
@@ -228,7 +261,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:gojitsu.com
 - partner_name: EVRi
   partner: evri
@@ -239,7 +272,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:evri.com
 - partner_name: ArcBest (Panther)
   partner: arcbest
@@ -250,7 +283,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:arcb.com
 - partner_name: Shippit
   partner: shippit
@@ -261,7 +294,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:shippit.com
 - partner_name: Paack
   partner: paack
@@ -272,7 +305,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:paack.co
 - partner_name: Loggi Express BR
   partner: loggi
@@ -283,8 +316,19 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:loggi.com
+- partner_name: Better Trucks
+  partner: bettertrucks
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:bettertrucks.com
 - partner_name: 99Minutos
   partner: 99-minutos
   partner_match: domain
@@ -294,7 +338,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:99minutos.com
 - partner_name: Ryder
   partner: ryder-system
@@ -305,7 +349,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:ryder.com
 - partner_name: Kurir Rekomendasi (Tokopedia)
   partner: tokopedia
@@ -316,7 +360,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:tokopedia.com
 - partner_name: BoxC
   partner: boxc
@@ -327,8 +371,19 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:boxc.com
+- partner_name: Shiprocket
+  partner: shiprocket
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:shiprocket.in
 - partner_name: Echo Global Logistics
   partner: echo-global
   partner_match: domain
@@ -338,7 +393,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:echo.com
 - partner_name: ONE (Ocean Network Express)
   partner: ocean-network-express
@@ -349,7 +404,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:one-line.com
 - partner_name: CMA CGM
   partner: cma-cgm
@@ -360,7 +415,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:cma-cgm.com
 - partner_name: Maersk
   partner: maersk-line
@@ -371,7 +426,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:maersk.com
 - partner_name: Old Dominion Freight Line
   partner: old-dominion-freight-line
@@ -382,7 +437,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:odfl.com
 - partner_name: RXO
   partner: rxo
@@ -393,7 +448,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:rxo.com
 - partner_name: Forward
   partner: forward-air
@@ -404,7 +459,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:forwardair.com
 - partner_name: GigaCloud Technology Inc
   partner: gigacloud-technology
@@ -415,7 +470,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:gigacloudtech.com
 - partner_name: DoorDash
   partner: doordash
@@ -426,7 +481,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:doordash.com
 - partner_name: C.H. Robinson
   partner: ch-robinson-worldwide
@@ -437,7 +492,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:chrobinson.com
 - partner_name: MSC
   partner: msc-cargo
@@ -448,7 +503,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:msc.com
 - partner_name: Lazada Choice
   partner: lazada
@@ -459,7 +514,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:lazada.com
 - partner_name: Ozon
   partner: ozonru
@@ -470,7 +525,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:ozon.ru
 - partner_name: Walmart
   partner: walmart
@@ -481,7 +536,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:walmart.com
 - partner_name: ShipBob
   partner: shipbob
@@ -492,7 +547,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:shipbob.com
 - partner_name: DP WORLD
   partner: dp-world
@@ -503,7 +558,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:dpworld.com
 - partner_name: PostEx
   partner: postex
@@ -514,7 +569,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:postex.pk
 - partner_name: JB hunt
   partner: jb-hunt-transport-services
@@ -525,7 +580,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:jbhunt.com
 - partner_name: Portal PostNord
   partner: postnord
@@ -536,7 +591,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:postnord.com
 - partner_name: Hapag-Lloyd
   partner: hapag-lloyd
@@ -547,7 +602,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:hapag-lloyd.com
 - partner_name: CoscoShipping
   partner: cosco-shipping
@@ -558,7 +613,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:coscoshipping.com
 - partner_name: Track-POD
   partner: track-pod
@@ -569,7 +624,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:track-pod.com
 - partner_name: Deppon
   partner: deppon-express
@@ -580,7 +635,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:deppon.com
 - partner_name: iMile
   partner: imile
@@ -591,7 +646,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:imile.com
 - partner_name: ZTO Express
   partner: zto-express
@@ -602,7 +657,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:zto.com
 - partner_name: JD Logistics
   partner: jd-logistics
@@ -613,7 +668,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:jdl.com
 - partner_name: Alibaba.com Logistics
   partner: alibaba
@@ -624,7 +679,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:alibaba.com
 - partner_name: Crane Worldwide (E-commerce)
   partner: crane-worldwide
@@ -635,7 +690,7 @@ edges:
   relationship: carrier-coverage
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
   detected_by: detect-carrier-edges.py
-  first_seen: '2026-10-12'
+  first_seen: '2026-10-13'
   matched_by: domain:craneww.com
 generated: '2026-10-12'
 method: searched

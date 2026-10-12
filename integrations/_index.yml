@@ -80,10 +80,43 @@
   relationship: carrier-coverage
   status: not-a-workflow
   arazzo: null
+- slug: 17track-aramex
+  label: Aramex
+  partner: aramex
+  partner_name: Aramex
+  type: contract
+  channel: provider-built
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  source: edge
+  relationship: carrier-coverage
+  status: not-a-workflow
+  arazzo: null
 - slug: 17track-pitney-bowes
   label: Pitney Bowes
   partner: pitney-bowes
   partner_name: Pitney Bowes
+  type: contract
+  channel: provider-built
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  source: edge
+  relationship: carrier-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: 17track-purolator
+  label: Purolator
+  partner: purolator
+  partner_name: Purolator
+  type: contract
+  channel: provider-built
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  source: edge
+  relationship: carrier-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: 17track-ontrac
+  label: OnTrac
+  partner: ontrac
+  partner_name: OnTrac
   type: contract
   channel: provider-built
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
@@ -289,6 +322,17 @@
   relationship: carrier-coverage
   status: not-a-workflow
   arazzo: null
+- slug: 17track-better-trucks
+  label: Better Trucks
+  partner: bettertrucks
+  partner_name: Better Trucks
+  type: contract
+  channel: provider-built
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  source: edge
+  relationship: carrier-coverage
+  status: not-a-workflow
+  arazzo: null
 - slug: 17track-99minutos
   label: 99Minutos
   partner: 99-minutos
@@ -326,6 +370,17 @@
   label: BoxC
   partner: boxc
   partner_name: BoxC
+  type: contract
+  channel: provider-built
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  source: edge
+  relationship: carrier-coverage
+  status: not-a-workflow
+  arazzo: null
+- slug: 17track-shiprocket
+  label: Shiprocket
+  partner: shiprocket
+  partner_name: Shiprocket
   type: contract
   channel: provider-built
   evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
