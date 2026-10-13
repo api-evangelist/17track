@@ -1,4 +1,19 @@
 edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-o477osrgsus5g
+  listing_count: 1
+  apps:
+  - 17TRACK - Order Tracking API
+  seller_name: 17TRACK
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 - partner_name: Australia Post
   partner: australia-post
   partner_match: domain
@@ -692,21 +707,6 @@ edges:
   detected_by: detect-carrier-edges.py
   first_seen: '2026-10-13'
   matched_by: domain:craneww.com
-- partner_name: AWS Marketplace
-  partner: amazon-web-services
-  partner_match: aggregator
-  type: marketplace
-  marketplace: aws-marketplace
-  channel: distribution
-  relationship: platform-app
-  direction: provider-built
-  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-o477osrgsus5g
-  listing_count: 1
-  apps:
-  - 17TRACK - Order Tracking API
-  seller_name: 17TRACK
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
 generated: '2026-10-12'
 method: searched
 checked:
