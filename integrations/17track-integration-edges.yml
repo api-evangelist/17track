@@ -1,4 +1,19 @@
 edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-o477osrgsus5g
+  listing_count: 1
+  apps:
+  - 17TRACK - Order Tracking API
+  seller_name: 17TRACK
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 - partner_name: Australia Post
   partner: australia-post
   partner_match: domain
@@ -43,6 +58,17 @@ edges:
   detected_by: detect-carrier-edges.py
   first_seen: '2026-10-13'
   matched_by: domain:dhl.com
+- partner_name: Poste Italiane
+  partner: poste-italiane
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:poste.it
 - partner_name: USPS
   partner: usps
   partner_match: domain
@@ -87,6 +113,17 @@ edges:
   detected_by: detect-carrier-edges.py
   first_seen: '2026-10-13'
   matched_by: domain:aramex.com
+- partner_name: Asendia
+  partner: asendia
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:asendia.com
 - partner_name: Pitney Bowes
   partner: pitney-bowes
   partner_match: domain
@@ -263,6 +300,17 @@ edges:
   detected_by: detect-carrier-edges.py
   first_seen: '2026-10-13'
   matched_by: domain:gojitsu.com
+- partner_name: Chronopost
+  partner: chronopost
+  partner_match: domain
+  channel: provider-built
+  direction: provider-built
+  type: contract
+  relationship: carrier-coverage
+  evidence: https://res.17track.net/asset/carrier/info/apicarrier.all.json
+  detected_by: detect-carrier-edges.py
+  first_seen: '2026-10-13'
+  matched_by: domain:chronopost.fr
 - partner_name: EVRi
   partner: evri
   partner_match: domain
@@ -692,21 +740,6 @@ edges:
   detected_by: detect-carrier-edges.py
   first_seen: '2026-10-13'
   matched_by: domain:craneww.com
-- partner_name: AWS Marketplace
-  partner: amazon-web-services
-  partner_match: aggregator
-  type: marketplace
-  marketplace: aws-marketplace
-  channel: distribution
-  relationship: distribution-channel
-  direction: third-party
-  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-o477osrgsus5g
-  listing_count: 1
-  apps:
-  - 17TRACK - Order Tracking API
-  seller_name: 17TRACK
-  detected_by: sweep-cloud-marketplaces.py
-  detected: '2026-10-13'
 generated: '2026-10-12'
 method: searched
 checked:
