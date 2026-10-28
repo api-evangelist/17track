@@ -64,65 +64,155 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Package tracking REST API supporting 3,300+ global carriers for real-time shipment tracking, status updates, and delivery notifications.
+Package tracking REST API supporting 3,300+ global carriers for real-time shipment tracking, status updates, and delivery notifications via webhook push mechanism.
 
-## Overview
+**Areas:** Shipping · Package Tracking · Logistics · Carrier · Delivery · Webhook
 
-17TRACK provides a unified tracking API that aggregates shipment data from over 3,300 carriers worldwide. The API uses a webhook push mechanism to automatically deliver tracking updates to your endpoint, covering 9 main status categories and 27 sub-statuses.
+## 17TRACK on APIs.io
 
-## API Base URL
+Everything profiled for 17TRACK is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/17track/](https://apis.io/providers/17track/)** — or go straight to one of the APIs or properties below.
 
-```
-https://api.17track.net/track/v1
-```
+### APIs (2)
 
-## Authentication
+- [17TRACK Tracking API](https://apis.io/apis/17track/17track-tracking-api/) — Core tracking operations for registering, retrieving, and managing shipment tracking numbers.
+- [17TRACK Webhooks API](https://apis.io/apis/17track/17track-webhooks-api/) — Webhook push notification management for receiving automatic tracking updates.
 
-All requests require an API key passed as an HTTP header:
+### Published properties
 
-```
-17token: YOUR_API_KEY
-```
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Obtain your API key from the Management Console under Settings > Security > Access Key.
+#### Agentic access (1)
 
-## Key Endpoints
+Which operations an agent can call, which act, and which need a human in the loop.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /register | Register tracking numbers |
-| POST | /gettrackinfo | Get detailed tracking information |
-| POST | /gettracklist | Get filtered tracking list |
-| POST | /stoptrack | Stop tracking for completed shipments |
-| POST | /retrack | Reactivate stopped tracking |
-| POST | /deletetrack | Remove tracking numbers |
-| POST | /changecarrier | Update carrier assignment |
-| POST | /changeinfo | Update tracking metadata |
-| POST | /push | Manually trigger webhook push |
+- [17Track Agentic Access](https://apis.io/agentic-access/17track/17track-agentic-access/)
 
-## Rate Limits
+#### JSON Schema (7)
 
-- 3 requests per second per API key
-- Maximum 40 tracking numbers per request
-- HTTP 429 returned when rate limit exceeded
+The data models the API reads and writes.
 
-## Pricing
+- [BatchResponse](https://apis.io/schemas/17track/BatchResponse/)
+- [ChangeCarrierRequest](https://apis.io/schemas/17track/ChangeCarrierRequest/)
+- [ChangeInfoRequest](https://apis.io/schemas/17track/ChangeInfoRequest/)
+- [RegisterRequest](https://apis.io/schemas/17track/RegisterRequest/)
+- [TrackInfoResponse](https://apis.io/schemas/17track/TrackInfoResponse/)
+- [TrackListRequest](https://apis.io/schemas/17track/TrackListRequest/)
+- [TrackNumberRequest](https://apis.io/schemas/17track/TrackNumberRequest/)
 
-Plans are quota-based with annual validity (12-month periods):
+#### JSON-LD (2)
 
-| Plan | Quota | Price (CNY) |
-|------|-------|-------------|
-| Free Trial | 100 | Free |
-| Basic | 10,000 | ¥299/year |
-| Advanced | 50,000 | ¥1,299/year |
-| Pro | 500,000 | ¥7,299/year |
-| Flagship | 1,000,000 | ¥9,999/year |
-| Custom | Custom | Contact sales |
+Linked-data contexts for the provider's vocabulary.
 
-## Resources
+- [Api Context](https://apis.io/jsonld/17track/api/)
+- [context Context](https://apis.io/jsonld/17track/context/)
 
-- [Developer Portal](https://www.17track.net/en/api)
-- [API Documentation](https://asset.17track.net/api/document/v1_en/index.html)
-- [Help Center](https://help.17track.net)
-- [Carrier List](https://res.17track.net/asset/carrier/info/apicarrier.all.json)
-- [API Support](mailto:apisupport@17track.net)
+#### Examples (4)
+
+Example requests and responses.
+
+- [Get Track Info](https://apis.io/examples/17track/get-track-info/)
+- [Register Tracking](https://apis.io/examples/17track/register-tracking/)
+- [Stop Tracking](https://apis.io/examples/17track/stop-tracking/)
+- [Webhook Push Payload](https://apis.io/examples/17track/webhook-push-payload/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [17TRACK Tracking API](https://apis.io/collections/17track/open-17track-tracking-api/)
+- [17TRACK Tracking Webhooks API](https://apis.io/collections/17track/open-17track-webhooks-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [17TRACK — jsonschema rules](https://apis.io/rules/17track/17track-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [17Track Authentication](https://apis.io/security/17track/17track-authentication/)
+- [17Track Domain Security](https://apis.io/security/17track/17track-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plans](https://apis.io/plans/17track/plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Rate Limits](https://apis.io/rate-limits/17track/rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Finops](https://apis.io/finops/17track/finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.17track.net)
+- [Documentation](https://asset.17track.net/api/document/v1_en/index.html)
+- [Pricing](https://www.17track.net/en/api)
+- [Blog](https://www.17track.net/en/blog)
+- [Terms of service](https://www.17track.net/en/terms)
+- [Privacy policy](https://www.17track.net/en/privacy)
+
+## API Evangelist rating
+
+**Kin Score 32.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 58.9 |
+| Contract governance | 9.8 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 31.6 |
+
+**Agent readiness 22.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 14.2** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/17track/](https://apis.io/providers/17track/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 17TRACK: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/17track/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
