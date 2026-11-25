@@ -85,7 +85,7 @@ Each property below is a page on APIs.io carrying the machine-readable artifact 
 
 Which operations an agent can call, which act, and which need a human in the loop.
 
-- [17Track Agentic Access](https://apis.io/agentic-access/17track/17track-agentic-access/)
+- [17TRACK Agentic Access](https://apis.io/agentic-access/17track/17track-agentic-access/)
 
 #### JSON Schema (7)
 
@@ -132,8 +132,8 @@ Spectral rulesets for the provider's contracts.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [17Track Authentication](https://apis.io/security/17track/17track-authentication/)
-- [17Track Domain Security](https://apis.io/security/17track/17track-domain-security/)
+- [17TRACK Authentication](https://apis.io/security/17track/17track-authentication/)
+- [17TRACK Domain Security](https://apis.io/security/17track/17track-domain-security/)
 
 #### Plans and pricing (1)
 
@@ -166,18 +166,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 32.0** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 30.8** — thin · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
-| Discoverability | 57.1 |
+| Discoverability | 64.3 |
 | Contract quality | 58.9 |
 | Contract governance | 9.8 |
 | Operational transparency | 0.0 |
 | Developer ergonomics | 28.6 |
-| Access clarity | 31.6 |
+| Access clarity | 25.5 |
 
-**Agent readiness 22.3** — agent-aware
+**Agent readiness 29.0** — agent-ready
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -187,7 +187,7 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | MCP Server | — |
 | Auth Clarity | bearer (partial credit) |
 | Idempotency | — |
-| Error Semantics | — |
+| Error Semantics | verified |
 | OpenAPI Examples | partial |
 | Rate Limit Signal | documented (partial credit) |
 | Event Surface Described | — |
@@ -200,8 +200,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 14.2** — Telecommunications
+**Regulatory alignment 9.2** — Telecommunications
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/17track/](https://apis.io/providers/17track/).
 
